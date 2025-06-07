@@ -49,9 +49,11 @@ jobs:
         run: |
           ls -la ~/.npm
           echo "--------------------"
-          ls -la ~/.npm/_cacache
+          ls -la ~/.npm/_cacache/content-v2
           echo "--------------------"
-          ls -la ~/.npm/_logs
+          ls -la ~/.npm/_cacache/index-v5
+          echo "--------------------"
+          ls -la ~/.npm/_cacache/tmp
       - name: Lint code
         run: npm run lint
       - name: Test code
