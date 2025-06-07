@@ -9,8 +9,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Before get code - show 'pwd' and 'ls -a'
+        run: |
+          pwd
+          ls -la
       - name: Get code
         uses: actions/checkout@v3
+      - name: After get code show pwd and ls -a
+        run: |
+          pwd
+          ls -la
       - name: Cache dependencies
         uses: actions/cache@v4
         with:
