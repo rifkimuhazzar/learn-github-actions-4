@@ -36,6 +36,7 @@ jobs:
             dist
             dist2/
             package.json
+            package2.json
 
   deploy:
     needs: build
