@@ -45,6 +45,8 @@ jobs:
           cd .. && pwd && ls -la
           cd .. && pwd && ls -la
           cd .. && pwd && ls -la
+      - name: Show inside ~/.npm
+        run: ls -la ~/.npm
       - name: Lint code
         run: npm run lint
       - name: Test code
