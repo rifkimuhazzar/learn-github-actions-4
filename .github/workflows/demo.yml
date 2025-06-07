@@ -33,27 +33,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.npm
-          key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+          key: deps-node-modules-${{ hashFiles('package-lock.json') }}
       - name: Install dependencies
         run: npm ci
-      - name: After install dependencies
-        run: |
-          pwd
-          ls -la
-          cd .. && pwd && ls -la
-          cd .. && pwd && ls -la
-          cd .. && pwd && ls -la
-          cd .. && pwd && ls -la
-          cd .. && pwd && ls -la
-      - name: Show inside ~/.npm
-        run: |
-          ls -la ~/.npm
-          echo "--------------------"
-          ls -la ~/.npm/_cacache/content-v2
-          echo "--------------------"
-          ls -la ~/.npm/_cacache/index-v5
-          echo "--------------------"
-          ls -la ~/.npm/_cacache/tmp
       - name: Lint code
         run: npm run lint
       - name: Test code
